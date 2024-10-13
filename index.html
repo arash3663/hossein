@@ -1,14 +1,17 @@
 <!DOCTYPE html>
+<html lang="de">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hossein's Site</title>
     <title>Care Cost Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
             background-color: #f7f7f7;
+            text-align: center; /* Center-align text within body */
         }
         form {
             background-color: white;
@@ -16,9 +19,12 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
+            margin: 0 auto; /* Center the form */
         }
         label {
             font-weight: bold;
+            text-align: left;
+            display: block;
         }
         select, input {
             width: 100%;
@@ -34,12 +40,31 @@
             cursor: pointer;
             width: 100%;
         }
-        h2 {
+        .login-button {
+            margin-top: 10px;
+            background-color: #83B63E;
+        }
+        .cost-section h2 {
+            font-size: 16px;
             color: #333;
+            margin: 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #ddd;
+        }
+        .cost-section {
+            max-width: 400px;
+            margin: 20px auto 0 auto; /* Center the cost section */
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
+    <h1>Welcome to Hossein's GitHub Pages</h1>
+    <p>This is a simple webpage for testing JavaScript files.</p>
+    <script src="https://arash3663.github.io/hossein/hossein.js"></script>
     <h1>Pflegerrechner</h1>
     <form>
         <label for="package">Paket:</label>
@@ -72,14 +97,19 @@
             <option value="28">28 Tage</option>
         </select><br>
         <button type="button" onclick="calculate()">Berechnen</button>
+        <a href="https://www.noracares.at/authorizationLanding">
+            <button type="button" class="login-button">Einloggen</button>
+        </a>
     </form>
-    <h2>Pflegekosten: <span id="careCost">0</span> EUR</h2>
-    <h2>Sozialversicherung: <span id="insurance">0</span> EUR</h2>
-    <h2>Pflegegeld: <span id="careMoney">0</span> EUR</h2>
-    <h2>Pflegeförderung: <span id="subsidy">0</span> EUR</h2>
-    <h2>Anreise: <span id="travelCost">0</span> EUR</h2>
-    <h2>Kosten pro 4 Wochen: <span id="totalCost">0</span> EUR</h2>
-    <h2>Kosten pro Tag: <span id="dailyCost">0</span> EUR</h2>
+    <div class="cost-section">
+        <h2>Pflegekosten: <span id="careCost">0</span> EUR</h2>
+        <h2>Sozialversicherung: <span id="insurance">0</span> EUR</h2>
+        <h2>Pflegegeld: <span id="careMoney">0</span> EUR</h2>
+        <h2>Pflegeförderung: <span id="subsidy">0</span> EUR</h2>
+        <h2>Anreise: <span id="travelCost">0</span> EUR</h2>
+        <h2>Kosten pro 4 Wochen: <span id="totalCost">0</span> EUR</h2>
+        <h2>Kosten pro Tag: <span id="dailyCost">0</span> EUR</h2>
+    </div>
     <script>
         function calculate() {
             var packageCost = parseFloat(document.getElementById('package').value);
